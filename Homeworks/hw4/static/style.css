@@ -1,0 +1,28 @@
+body {
+	background-color: lightblue;
+}
+
+.intro {
+	text-align: center;
+	color: darkblue;
+}
+
+p.intro {
+	font-size: 15px;
+}
+
+table {
+    	font-family: arial, sans-serif;
+    	border-collapse: collapse;
+    	width: 100%;
+}
+
+td, th {
+    	border: 1px solid #ffffff;
+    	text-align: left;
+    	padding: 8px;
+}
+	
+tr:nth-child(even) {
+    	background-color: #ffffff;
+	}
