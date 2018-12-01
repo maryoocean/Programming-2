@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<style>
+	table {
+    		table-layout: fixed;
+	}
+	</style>
+    <meta charset="UTF-8">
+    <title>Статистика</title>
+</head>
+
+<link rel="stylesheet" type="text/css"href="{{url_for('static', filename='style.css')}}">
+
+<body>
+<center>
+<h2>На этой странице представлена статистика ответов пользователей.</h2>
+
+<table>
+  <tr>
+    <th>Предлог</th>
+    <th>Спрашивать</th>
+  </tr>
+  	{% for prep, v in ask.items() %}
+  <tr>
+	<td>{{ prep }}</td>
+	<td>{{v}}</td>
+	</tr>
+	{% endfor %}
+</table>
+
+<br><br>
+
+<table>
+  <tr>
+    <th>Предлог</th>
+    <th>Смеяться</th>
+  </tr>
+  	{% for prep, v in laugh.items() %}
+  <tr>
+	<td>{{ prep }}</td>
+	<td>{{v}}</td>
+	</tr>
+	{% endfor %}
+</table>
+
+<br><br>
+
+<table>
+  <tr>
+    <th>Предлог</th>
+    <th>Скучать</th>
+  </tr>
+  	{% for prep, v in miss.items() %}
+  <tr>
+	<td>{{ prep }}</td>
+	<td>{{v}}</td>
+	</tr>
+	{% endfor %}
+</table>
+
+<br><br>
+
+<table>
+  <tr>
+    <th>Предлог</th>
+    <th>Школа</th>
+  </tr>
+  	{% for prep, v in school.items() %}
+  <tr>
+	<td>{{ prep }}</td>
+	<td>{{v}}</td>
+	</tr>
+	{% endfor %}
+</table>
+
+<br><br>
+
+<table>
+  <tr>
+    <th>Предлог</th>
+    <th>Facebook</th>
+  </tr>
+  	{% for prep, v in FB.items() %}
+  <tr>
+	<td>{{ prep }}</td>
+	<td>{{v}}</td>
+	</tr>
+	{% endfor %}
+</table>
+
+<br><br>
+
+<table>
+  <tr>
+    <th>Предлог</th>
+    <th>YouTube</th>
+  </tr>
+  	{% for prep, v in YouTube.items() %}
+  <tr>
+	<td>{{ prep }}</td>
+	<td>{{v}}</td>
+	</tr>
+	{% endfor %}
+</table>
+
+<br><br>
+
+<table>
+  <tr>
+    <th>Предлог</th>
+    <th>Альбом (музыкальный)</th>
+  </tr>
+  	{% for prep, v in album.items() %}
+  <tr>
+	<td>{{ prep }}</td>
+	<td>{{v}}</td>
+	</tr>
+	{% endfor %}
+</table>
+
+<br><br>
+<img src="{{url_for('static', filename='ppl.jpg')}}"  width="533" height="400"/>
+<br><br>
+
+</center>
+<p><b>Другие страницы этого сайта:</p></b>
+	<ul>
+		{% for name, url in urls.items() %}
+		<li><a href="{{ url }}">{{ name }}</a></li>
+		{% endfor %}
+</body>
+</html>
+
+</html>

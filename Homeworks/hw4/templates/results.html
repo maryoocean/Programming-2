@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title> Результаты поиска</title>
+</head>
+
+<body>
+<center>
+{% if res == 0 %}
+<h2>{{ no_res }}</h2>
+<p><a href="http://127.0.0.1:5000/search">Вернуться</a></p>
+{% else %}
+<h2>Результаты поиска</h2>
+<table>
+  <tr>
+    <th>Пол</th>
+    <th>Возраст</th>
+    <th>Уровень образования</th>
+    <th>Знание английского</th>
+    <th>Знание других иностранных языков</th>
+    <th>Смеяться</th>
+    <th>Спрашивать</th>
+    <th>Скучать</th>
+    <th>Школа</th>
+    <th>Фейсбук</th>
+    <th>YouTube</th>
+    <th>Музыкальный альбом</th>
+  </tr>
+  {% for line in content %}
+  <tr>
+  {% for cell in line %}
+   <td>{{ cell }}</td>
+   {% endfor %}
+</tr>
+  {% endfor %}
+</table>
+{% endif %}
+</center>
+<p><b>Другие страницы этого сайта:</p></b>
+	<ul>
+		{% for name, url in urls.items() %}
+		<li><a href="{{ url }}">{{ name }}</a></li>
+		{% endfor %}
+</body>
+</html>

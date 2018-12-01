@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Анкета</title>
+</head>
+<body>
+
+<link rel="stylesheet" type="text/css"href="{{url_for('static', filename='style.css')}}">
+
+<h1 class="intro">Инструкция:</h1>
+<p class="intro">Вам предстоит пройти небольшую анкету. Пожалуйста, не тратьте много времени на 
+раздумья,правильных ответов всё равно нет! :) Анкета анонимная, но некоторые данные о себе
+мы попросим Вас оставить. Спасибо!</p>
+<form action="http://127.0.0.1:5000/stats">
+		<p><b>Вы</b></p>
+		<input type="radio" name="sex" value="female" required>Женщина<br>
+    	<input type="radio" name="sex" value="male" required>Мужчина<br>
+        <p><b>Сколько Вам лет?</b></p>
+        <input type="radio" name="age" value="teens" required>меньше 25<br>
+    	<input type="radio" name="age" value="young" required>26-35<br>
+    	<input type="radio" name="age" value="middle" required>36-50<br>
+    	<input type="radio" name="age" value="elderly" required>больше 50<br>
+        <p><b>Какое у Вас образование?</b></p>
+        <input type="radio" name="edu_level" value="school" required>Основное/Среднее<br>
+        <input type="radio" name="edu_level" value="college" required>Среднее профессиональное<br>
+        <input type="radio" name="edu_level" value="higher" required>Высшее<br>
+        <input type="radio" name="edu_level" value="student" required>Сейчас учусь<br>
+        <p><b>Владеете ли Вы английском языком?</b></p>
+        <input type="radio" name="eng" value="beginner" required>Да, на начальном уровне (A1-A2)<br>
+        <input type="radio" name="eng" value="int" required>Да, на среднем уровне (B1-B2)<br>
+        <input type="radio" name="eng" value="adv" required>Да, на провинутом уровне (C1-C2)<br>
+        <input type="radio" name="eng" value="no" required>Нет, не владею<br>
+        <p><b>Может быть, вы владеете другими иностранными языками? 
+        Укажите, пожалуйста, их.</b></p>
+        <input type="radio" name="lang" value="None">К сожалению, не владею.<br>
+        <input type="text" name="lang" value=""><br>
+        <h2>А теперь вопросы.</h2>
+        <p><b>Мой друг очень смешно пошутил. 
+        	Я очень долго смеялся ... (его шутка).</b></p>
+        <input type="text" name="laugh" value="" required>
+        <p><b>Мы с Машей не пойдём на лекцию. 
+        	Если ... нас будут спрашивать, прикроешь?</b></p>
+        <input type="text" name="ask" value="" required>
+        <p><b>Когда мой брат возвращается ... школы, мы садимся обедать.</b></p>
+        <input type="text" name="school" value="" required>
+        <p><b>Мой любимый певец недавно выпустил альбом. 
+        	... этом альбоме много хороших песен!</b></p>
+        <input type="text" name="album" value="" required>
+        <p><b>У меня нет личных страниц в социальных сетях, 
+    		... Фейсбуке есть для бизнеса.</b></p>
+        <input type="text" name="FB" value="" required>
+        <p><b>Я очень давно не видела своего брата. 
+        	Думаю, что и он скучает ... (я).</b></p>
+        <input type="text" name="miss" value="" required>
+        <p><b>Моя сестра много времени проводит в интренете! 
+        	Она всё время смотрит видео ... YouTube.</b></p>
+        <input type="text" name="YouTube" value="" required>
+        <p><input type="submit" value="Отправить"></p>
+    </form>
+
+<p><b>Другие страницы этого сайта:</p></b>
+	<ul>
+		{% for name, url in urls.items() %}
+		<li><a href="{{ url }}">{{ name }}</a></li>
+		{% endfor %}
+
+</body>
+</html>

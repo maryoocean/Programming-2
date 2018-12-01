@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>JSON</title>
+</head>
+
+<link rel="stylesheet" type="text/css"href="{{url_for('static', filename='style.css')}}">
+
+<body>
+<center>
+	<h2>JSON-данные</h2>
+	{% for i in content %}
+	<p>{{ i }}</p>
+	{% endfor %}
+	<p><b>Другие страницы этого сайта:</p></b>
+	<ul>
+		{% for name, url in urls.items() %}
+		<li><a href="{{ url }}">{{ name }}</a></li>
+		{% endfor %}
+</center>
+</body>
+</html>

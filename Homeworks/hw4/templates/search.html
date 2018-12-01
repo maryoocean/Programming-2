@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Поиск</title>
+</head>
+
+<link rel="stylesheet" type="text/css"href="{{url_for('static', filename='style.css')}}">
+
+<body>
+	<h2>Поиск</h2>
+	<ol><h3>Есть 2 параметра, по которым можно искать:</h3>
+		<li>По уровню владения английским языком</li>
+		<li>Поиск по предлогу</li>
+	</ol>
+<center>
+	<form action="http://127.0.0.1:5000/results">
+		<p><b>Как ответили респонденты, которые
+  		<select name="eng_l">
+  			<option value="" checked></option>
+    		<option value="no">не владеют английским?</option>
+    		<option value="beginner">владеют английским на начинающем уровне?</option>
+    		<option value="int">владеют английским на среднем уровне?</option>
+    		<option value="adv">владеют английским на продвинутом уровне?</option>
+  		</select>
+  		<input type="submit" name="search" value="Поиск">
+  <br><br>
+  		<p><b>Введите предлог</b></p>
+  			<input type="text" name="prep" value="" checked>
+  		<input type="submit" name="search" value="Поиск по предлогу">
+	</form>
+</center>
+<p><b>Другие страницы этого сайта:</p></b>
+	<ul>
+		{% for name, url in urls.items() %}
+		<li><a href="{{ url }}">{{ name }}</a></li>
+		{% endfor %}
+</body>
+</html>
