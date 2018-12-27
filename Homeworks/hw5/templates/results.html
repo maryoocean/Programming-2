@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title> Результаты поиска</title>
+</head>
+
+<body>
+<center>
+
+<h2>Поиск</h2>
+	<form action="http://127.0.0.1:5000/results">
+		<p><b>Введите слово, которое хотите найти</b></p>
+  		<input type="text" name="words" value="">
+  		<input type="submit" name="search" value="Поиск">
+  	</form>
+<h2>Результаты</h2>
+{% for title, url in d_meta.items() %}
+<p><a href="{{ url }}">{{ title }}</a></p>
+{% for ti, article in text_art.items() %}
+{% if ti==title %}
+<p>{{ article }}</p>
+{% endif %}
+{% endfor %}
+{% endfor %}
